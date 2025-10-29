@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TabPage.Page2"
+             BackgroundColor="#F5F5F5"
+             Title="Editor">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <!-- Информация об авторах -->
+            <Label Text="Мухамедшина Э.Э., Федорова Е.Д. Группа: БИ07"
+                   FontSize="16"
+                   TextColor="White"
+                   BackgroundColor="#27AE60"
+                   HorizontalOptions="Fill"
+                   HorizontalTextAlignment="Center"
+                   Padding="10"
+                   Margin="0,0,0,10"
+                   FontAttributes="Bold" />
+
+            <Label Text="Editor позволяет пользователю вводить и редактировать несколько строк текста"
+                   VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="Center"
+                   WidthRequest="300"
+                   BackgroundColor="#8B4513"
+                   HeightRequest="300"
+                   TextColor="#FFD700"
+                   FontAttributes="Bold"
+                   FontSize="25" />
+
+            <Editor BackgroundColor="#FFE4C4"
+                    VerticalOptions="CenterAndExpand"
+                    TextColor="#2C3E50"
+                    Text="Текст может редактироваться пользователями"
+                    FontSize="30"
+                    FontAttributes="Bold"
+                    HeightRequest="150"
+                    Margin="20" />
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

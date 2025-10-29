@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:TemPage"
+             x:Class="TemPage.HeaderFooterPage">
+
+    <ContentPage.Resources>
+        <!-- Стиль для элементов Entry -->
+        <Style TargetType="Entry">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="FontSize" Value="18" />
+                                <Setter Property="TextColor" Value="DarkBlue" />
+                                <Setter Property="BackgroundColor" Value="LightCyan" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="Focused">
+                            <VisualState.Setters>
+                                <Setter Property="FontSize" Value="22" />
+                                <Setter Property="TextColor" Value="White" />
+                                <Setter Property="BackgroundColor" Value="RoyalBlue" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+
+        <!-- Стиль для кнопки -->
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#FF6B35" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="HeightRequest" Value="50" />
+        </Style>
+
+        <!-- Стиль для метки студентов -->
+        <Style x:Key="StudentsLabelStyle" TargetType="Label">
+            <Setter Property="TextColor" Value="DarkSlateGray" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="FontAttributes" Value="Italic" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="Margin" Value="0,5,0,5" />
+        </Style>
+
+        <!-- Оранжевый шаблон -->
+        <ControlTemplate x:Key="OrangeTemplate">
+            <Grid BackgroundColor="White">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.05*" />
+                    <!-- Строка для разработчиков -->
+                    <RowDefinition Height="0.1*" />
+                    <!-- Заголовок -->
+                    <RowDefinition Height="0.8*" />
+                    <!-- Основной контент -->
+                    <RowDefinition Height="0.05*" />
+                    <!-- Колонтитул -->
+                </Grid.RowDefinitions>
+
+                <!-- Блок с ФИО студентов (САМЫЙ ВЕРХ) -->
+                <StackLayout Grid.Row="0" BackgroundColor="LightGray" Padding="3">
+                    <Label Text="Авторы: Абанкина Т., Варенцова Д., Нуреева А., Щербаков А. Группа БИ02"
+                           Style="{StaticResource StudentsLabelStyle}" />
+                </StackLayout>
+
+                <!-- Верхняя часть (заголовок) -->
+                <BoxView Grid.Row="1" Color="#FF8C00" />
+                <Label Grid.Row="1"
+                       Margin="20,0,0,0"
+                       Text="{TemplateBinding HeaderText}"
+                       TextColor="White"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center" />
+
+                <!-- Основное содержимое -->
+                <ContentPresenter Grid.Row="2" />
+
+                <!-- Нижняя часть (колонтитул) -->
+                <BoxView Grid.Row="3" Color="#FF8C00" />
+                <Label x:Name="СhangeThemeLabel"
+                       Grid.Row="3"
+                       Margin="20,0,0,0"
+Text="Сменить тему на Зеленую"
+                       TextColor="White"
+                       FontSize="14"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnChangeTheme" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </Grid>
+        </ControlTemplate>
+
+        <!-- Зеленый шаблон -->
+        <ControlTemplate x:Key="GreenTemplate">
+            <Grid BackgroundColor="White">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.05*" />
+                    <!-- Строка для разработчиков -->
+                    <RowDefinition Height="0.1*" />
+                    <!-- Заголовок -->
+                    <RowDefinition Height="0.8*" />
+                    <!-- Основной контент -->
+                    <RowDefinition Height="0.05*" />
+                    <!-- Колонтитул -->
+                </Grid.RowDefinitions>
+
+                <!-- Блок с ФИО студентов (САМЫЙ ВЕРХ) -->
+                <StackLayout Grid.Row="0" BackgroundColor="#90EE90" Padding="3">
+                    <Label Text="Авторы: Абанкина Т., Варенцова Д., Нуреева А., Щербаков А. Группа БИ02"
+                           TextColor="DarkGreen"
+                           FontSize="12"
+                           FontAttributes="Italic"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center" />
+                </StackLayout>
+
+                <!-- Верхняя часть (заголовок) -->
+                <BoxView Grid.Row="1" Color="#2E8B57" />
+                <Label Grid.Row="1"
+                       Margin="20,0,0,0"
+                       Text="{TemplateBinding HeaderText}"
+                       TextColor="Yellow"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center" />
+
+                <!-- Основное содержимое -->
+                <ContentPresenter Grid.Row="2" />
+
+                <!-- Нижняя часть (колонтитул) -->
+                <BoxView Grid.Row="3" Color="#2E8B57" />
+                <Label x:Name="СhangeThemeLabel"
+                       Grid.Row="3"
+                       Margin="20,0,0,0"
+                       Text="Сменить тему на Оранжевую"
+                       FontSize="14" 
+                       FontAttributes="Bold"
+                       TextColor="Yellow"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnChangeTheme" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </Grid>
+        </ControlTemplate>
+    </ContentPage.Resources>
+</ContentPage>

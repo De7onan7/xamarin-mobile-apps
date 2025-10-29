@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TabPage.Page3"
+             BackgroundColor="#E8F8F5"
+             Title="Entry">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <!-- Информация об авторах -->
+            <Label Text="Авторы: Абанкина Т., Варенцова Д., Нуреева А., Щербаков А. Группа БИ02"
+                   FontSize="16"
+                   TextColor="White"
+                   BackgroundColor="#E74C3C"
+                   HorizontalOptions="Fill"
+                   HorizontalTextAlignment="Center"
+                   Padding="10"
+                   Margin="0,0,0,10"
+                   FontAttributes="Bold" />
+
+            <Label Text="Entry позволяет пользователю вводить и редактировать одну строку текста."
+                   VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="Center"
+                   WidthRequest="300"
+                   BackgroundColor="#8B4513"
+                   HeightRequest="300"
+                   TextColor="#FFD700"
+                   FontAttributes="Bold"
+                   FontSize="25" />
+
+            <Entry Keyboard="Text"
+                   BackgroundColor="#FFD700"
+                   HorizontalTextAlignment="Center"
+                   Placeholder="Введите текст здесь..."
+                   PlaceholderColor="#7F8C8D"
+                   VerticalOptions="CenterAndExpand"
+                   FontSize="30"
+                   TextColor="#2C3E50"
+                   FontAttributes="Bold"
+                   HeightRequest="60"
+                   Margin="20,0" />
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>
